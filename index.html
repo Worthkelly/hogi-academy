@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Calculator</title>
+
+    <style>
+        .principal{
+    max-width: 400px;
+    margin: 10vh auto 0 auto;
+    box-shadow: 0px 0px 43px 17px rgba( yellow, green, blue, alpha);
+    border: 3px solid black;
+}
+#ensemble{
+    text-align: right;
+    height: 50px;
+    line-height: 70px;
+    padding: 18px 20px;
+    font-size: 30px;
+    border-radius: 50px;
+    background-color: rosybrown;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+#effacer{
+    background-color: brown; 
+}
+#effacer:hover{
+    background-color: gold;
+    color: black;
+}
+.buttons{
+   display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1px;
+    border-radius: 10px;
+}     
+.button{
+    justify-items: center;
+    line-height: 80px;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 100px;
+    background-color: green;
+    color: black;
+}
+.button:hover{
+    background-color: gold;
+    color: black;
+} 
+#egale{
+    background-color: crimson;
+    color: black;
+}
+#egale:hover{
+    background-color: gold;
+    color: black;
+} 
+#clear{
+    background-color: darkcyan;
+}
+#clear:hover{
+    background-color: gold;
+    color: black;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+   
+        <div class="principal">
+            <div id="ensemble"></div>
+            <div class="buttons">
+                <div onclick="effacer(this.innerHTML)"id="clear" class="button">C</div>
+                <div onclick="ecrire(this.innerHTML)"class="button">/</div>
+                <div onclick="ecrire(this.innerHTML)"class="button">*</div>
+                <div onclick="effacer(this.innerHTML)"id="effacer" class="button">Effacer</div>
+                <div onclick="ecrire(this.innerHTML)"class="button">7</div>
+                <div onclick="ecrire(this.innerHTML)"class="button">8</div>
+                <div onclick="ecrire(this.innerHTML)"class="button">9</div>
+                <div onclick="ecrire(this.innerHTML)"class="button">-</div>
+                <div onclick="ecrire(this.innerHTML)"class="button">4</div>
+                <div onclick="ecrire(this.innerHTML)"class="button">5</div>
+                <div onclick="ecrire(this.innerHTML)"class="button">6</div>
+                <div onclick="ecrire(this.innerHTML)"class="button">+</div>
+                <div onclick="ecrire(this.innerHTML)"class="button">1</div>
+                <div onclick="ecrire(this.innerHTML)"class="button">2</div>
+                <div onclick="ecrire(this.innerHTML)"class="button">3</div>
+                <div onclick="ecrire(this.innerHTML)"class="button">.</div>
+                <div onclick="ecrire(this.innerHTML)"class="button">(</div>
+                <div onclick="ecrire(this.innerHTML)"class="button">0</div>
+                <div onclick="ecrire(this.innerHTML)"class="button">)</div>
+                <div onclick="egale(this.innerHTML)"id="egale" class="button">=</div>
+            </div>
+        </div>
+   
+
+    <script>
+        function ecrire(y){
+    document.getElementById("ensemble").innerHTML +=y;
+    }
+    function effacer(){
+    document.getElementById("ensemble").innerHTML=""
+    }
+    function egale(){
+    let dios = document.getElementById("ensemble");
+    dios.innerText = eval(dios.innerText);
+    }
+    </script>
+</body>
+</html>
